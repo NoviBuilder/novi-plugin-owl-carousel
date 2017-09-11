@@ -1,0 +1,1 @@
+# novi-plugin-owl-carousel
