@@ -78,6 +78,16 @@ function insertChildElement(element, childElement, staticSlide){
     }
 
     carousel.trigger('refresh.owl.carousel');
+
+    if (insertIndex){
+        carousel.trigger('to.owl.carousel', [insertIndex, 200, true]);
+    }
+    else{
+        let insertIndex = element.querySelectorAll(".owl-stage-outer .owl-stage > *").length;
+        carousel.trigger('to.owl.carousel', [insertIndex, 200, true]);
+    }
+
+
 }
 function insertElement(element, staticSlide){
     if (!staticSlide) return;
@@ -85,6 +95,8 @@ function insertElement(element, staticSlide){
     let carousel = element.owl;
     carousel.trigger('add.owl.carousel', [newDynamicSlide]);
     carousel.trigger('refresh.owl.carousel');
+    let insertIndex = element.querySelectorAll(".owl-stage-outer .owl-stage > *").length;
+    carousel.trigger('to.owl.carousel', [insertIndex, 200, true]);
 }
 
 

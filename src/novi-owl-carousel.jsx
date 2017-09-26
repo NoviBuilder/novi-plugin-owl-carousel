@@ -14,6 +14,7 @@ const Plugin = {
     },
     defaults: {
         querySelector: '.owl-carousel',
+        childQuerySelector : '.owl-carousel .owl-item > *'
     },
     ui: {
         editor: [SettingsItem, AddSlideItem, RemoveSlideItem],

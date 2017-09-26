@@ -76,7 +76,6 @@ $document.ready(function () {
       c.owlCarousel({
         autoplay: isNoviBuilder ? false : c.attr("data-autoplay") === "true",
         loop: isNoviBuilder ? false : c.attr("data-loop") !== "false",
-        rtl: isRtl,
         dotsContainer: c.attr("data-pagination-class") || false,
         navContainer: c.attr("data-navigation-class") || false,
         mouseDrag: isNoviBuilder ? false : c.attr("data-mouse-drag") !== "false",

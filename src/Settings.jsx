@@ -9,7 +9,6 @@ export default class Settings extends Component {
         this.state = {
             settings: {
                 querySelector: props.settings.querySelector,
-                childQuerySelector: ".owl-carousel .owl-item > *"
             }
         };
         this.saveSettings = this.saveSettings.bind(this);
@@ -20,7 +19,6 @@ export default class Settings extends Component {
         this.setState({
             settings: {
                 querySelector: props.settings.querySelector,
-                childQuerySelector: ".owl-carousel .owl-item > *"
             }
         });
     }
