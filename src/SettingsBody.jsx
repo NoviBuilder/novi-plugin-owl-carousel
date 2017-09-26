@@ -94,7 +94,7 @@ export default class Body extends Component {
                     </div>
                     <div style={{"marginLeft": "10px"}}>
                         <p className="novi-label" style={{"marginTop": "0"}}>
-                            Indent between owl items:
+                            Indent between items (px):
                         </p>
                         <InputNumber min={0} value={activeMargin} onChange={this._handleMarginChange}/>
                     </div>
