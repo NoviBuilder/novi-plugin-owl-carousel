@@ -8,7 +8,8 @@ const AddSlideItem = {
     tooltip: "Add Slide",
     closeIcon: "submit",
     title: "Add New Slide",
-    onTriggerClick: addSlide
+    onTriggerClick: addSlide,
+    highlightChild: true
 };
 
 export default AddSlideItem;

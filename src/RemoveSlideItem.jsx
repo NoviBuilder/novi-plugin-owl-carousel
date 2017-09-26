@@ -8,7 +8,8 @@ const RemoveSlideItem = {
     tooltip: "Remove Slide",
     closeIcon: "submit",
     title: "Remove Slide",
-    onTriggerClick: removeSlide
+    onTriggerClick: removeSlide,
+    highlightChild: true
 };
 
 export default RemoveSlideItem;

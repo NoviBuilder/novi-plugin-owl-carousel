@@ -33,7 +33,6 @@ const SettingsItem = {
     body: [<SettingsBody />],
     closeIcon: "submit",
     onSubmit: onSubmitAction,
-    collapsed: true,
     width: 320,
     height: 170
 };
