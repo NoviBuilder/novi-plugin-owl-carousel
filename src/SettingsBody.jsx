@@ -130,7 +130,7 @@ export default class Body extends Component {
                     Carousel Autoplay Delay, seconds
                 </p>
                 <div style={{"maxWidth": "56px"}}>
-                    <InputNumber min={0} value={this.state.autoplayTime} onChange={this._handleAutoplayChange}/>
+                    <InputNumber min={1} value={this.state.autoplayTime} onChange={this._handleAutoplayChange}/>
                 </div>
             </div>
         )

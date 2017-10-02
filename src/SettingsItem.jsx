@@ -34,7 +34,8 @@ const SettingsItem = {
     closeIcon: "submit",
     onSubmit: onSubmitAction,
     width: 320,
-    height: 170
+    height: 170,
+    submitOnBlur: false
 };
 
 export default SettingsItem;
