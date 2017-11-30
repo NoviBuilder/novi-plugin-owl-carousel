@@ -4,7 +4,7 @@ const Component = novi.react.Component;
 const Switcher = novi.ui.switcher;
 const InputNumber = novi.ui.inputNumber;
 const Editor = novi.editor;
-
+const Language = novi.language;
 export default class Body extends Component {
     constructor(props) {
         super(props);
@@ -76,6 +76,7 @@ export default class Body extends Component {
         this._handleSwitcherChange = this._handleSwitcherChange.bind(this);
         this._handleLoopChange = this._handleLoopChange.bind(this);
         this._renderAutoPlaySeconds = this._renderAutoPlaySeconds.bind(this);
+        this.messages = Language.getDataByKey("novi-plugin-owl-carousel");
     }
 
 
@@ -88,13 +89,13 @@ export default class Body extends Component {
                 <div className="owl-group">
                     <div>
                         <p className="novi-label" style={{"marginTop": "0"}}>
-                            Visible items:
+                            {this.messages.editor.settings.body.visibleItems}
                         </p>
                         <InputNumber min={1} value={activeItem} onChange={this._handleItemChange}/>
                     </div>
                     <div style={{"marginLeft": "10px"}}>
                         <p className="novi-label" style={{"marginTop": "0"}}>
-                            Indent between items (px):
+                            {this.messages.editor.settings.body.indent}
                         </p>
                         <InputNumber min={0} value={activeMargin} onChange={this._handleMarginChange}/>
                     </div>
@@ -104,14 +105,14 @@ export default class Body extends Component {
 
                 <div className="owl-switcher">
                     <p className="novi-label" style={{"margin": 0}}>
-                        Enable loop (in Preview Mode)
+                        {this.messages.editor.settings.body.loop}
                     </p>
                     <Switcher isActive={this.state.loop} onChange={this._handleLoopChange}/>
                 </div>
 
                 <div className="owl-switcher">
                     <p className="novi-label" style={{"margin": 0}}>
-                        Enable autoplay (in Preview Mode)
+                        {this.messages.editor.settings.body.autoplay}
                     </p>
                     <Switcher isActive={this.state.autoplay} onChange={this._handleSwitcherChange}/>
                 </div>
@@ -127,7 +128,7 @@ export default class Body extends Component {
         return (
             <div className={switcherName}>
                 <p className="novi-label" style={{"margin": 0}}>
-                    Carousel Autoplay Delay, seconds
+                    {this.messages.editor.settings.body.autoplayDelay}
                 </p>
                 <div style={{"maxWidth": "56px"}}>
                     <InputNumber min={1} value={this.state.autoplayTime} onChange={this._handleAutoplayChange}/>
@@ -182,6 +183,7 @@ export default class Body extends Component {
             novi.element.getAttribute(element, 'data-sm-items') || null,
             novi.element.getAttribute(element, 'data-md-items') || null,
             novi.element.getAttribute(element, 'data-lg-items') || null,
+            novi.element.getAttribute(element, 'data-xl-items') || null,
         ]
     }
 
@@ -192,6 +194,7 @@ export default class Body extends Component {
             novi.element.getAttribute(element, 'data-sm-margin') ? novi.element.getAttribute(element, 'data-sm-margin').replace("px", "") : null,
             novi.element.getAttribute(element, 'data-md-margin') ? novi.element.getAttribute(element, 'data-md-margin').replace("px", "") : null,
             novi.element.getAttribute(element, 'data-lg-margin') ? novi.element.getAttribute(element, 'data-lg-margin').replace("px", "") : null,
+            novi.element.getAttribute(element, 'data-xl-margin') ? novi.element.getAttribute(element, 'data-xl-margin').replace("px", "") : null,
 
         ]
     }
@@ -202,7 +205,7 @@ export default class Body extends Component {
             size.width = element.ownerDocument.defaultView.innerWidth;
         }
 
-        return size.width < 480 ? 0 : size.width <768 ? 1 : size.width < 992 ? 2 : size.width < 1200 ? 3 : 4;
+        return size.width < 480 ? 0 : size.width <768 ? 1 : size.width < 992 ? 2 : size.width < 1200 ? 3 : size.width < 1600 ? 4: 5;
     }
 
     getActiveItemValue(items){

@@ -4,6 +4,7 @@ const React = novi.react.React;
 const Icons = novi.ui.icons;
 const Icon = novi.ui.icon;
 const lodash = novi.utils.lodash;
+const messages = novi.language.getDataByKey("novi-plugin-owl-carousel");
 let icon = <Icon>
     <svg viewBox="0 0 27 16" style={{height: 28, width: 28, maxWidth: "inherit", maxHeight: "inherit"}}>
         <path
@@ -27,13 +28,13 @@ let icon = <Icon>
 
 const SettingsItem = {
     trigger: icon,
-    tooltip: "Owl Carousel Settings",
-    title: "Owl Carousel Settings",
-    header: [icon, <span>Owl Carousel Settings</span>],
+    tooltip: messages.editor.settings.tooltip,
+    title: messages.editor.settings.title,
+    header: [icon, <span>{messages.editor.settings.header}</span>],
     body: [<SettingsBody />],
     closeIcon: "submit",
     onSubmit: onSubmitAction,
-    width: 320,
+    width: 350,
     height: 170,
     submitOnBlur: false
 };
@@ -59,7 +60,8 @@ function onSubmitAction(headerStates, bodyStates) {
             'data-xs-margin',
             'data-sm-margin',
             'data-md-margin',
-            'data-lg-margin'
+            'data-lg-margin',
+            'data-xl-margin'
         ];
 
         for (let i=0; i<resolutions.length; i++){
@@ -76,7 +78,8 @@ function onSubmitAction(headerStates, bodyStates) {
             'data-xs-items',
             'data-sm-items',
             'data-md-items',
-            'data-lg-items'
+            'data-lg-items',
+            'data-xl-items'
         ];
 
         for (let i=0; i<resolutions.length; i++){
