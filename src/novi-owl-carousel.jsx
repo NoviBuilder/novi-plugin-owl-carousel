@@ -26,7 +26,7 @@ function onLanguageChange(plugin){
     let messages = Language.getDataByKey("novi-plugin-owl-carousel");
     plugin.ui.editor[0].title = messages.editor.settings.title;
     plugin.ui.editor[0].tooltip = messages.editor.settings.tooltip;
-    plugin.ui.editor[0].header = <span>{messages.editor.settings.header}</span>;
+    plugin.ui.editor[0].header[1] = <span>{messages.editor.settings.header}</span>;
 
     plugin.ui.editor[1].title = messages.editor.addSlide.title;
     plugin.ui.editor[1].tooltip = messages.editor.addSlide.tooltip;
