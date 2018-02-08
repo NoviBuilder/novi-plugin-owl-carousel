@@ -19,3 +19,23 @@ export function getRemoveElementIndex(element, childElement){
         if (slides[i] === targetElement) return i
     }
 }
+export function getPrevElement(element, childElement){
+    let index = getRemoveElementIndex(element, childElement);
+    if (index === undefined) return;
+    let slides = element.querySelectorAll(".owl-stage-outer .owl-stage > *");
+    return slides[index-1].firstChild
+}
+
+export function getNextElement(element, childElement){
+    let index = getRemoveElementIndex(element, childElement);
+    if (index === undefined) return false;
+    let slides = element.querySelectorAll(".owl-stage-outer .owl-stage > *");
+    return slides[index+2].firstChild
+}
+
+export function isLastPrevSlide(element, childElement){
+    let index = getRemoveElementIndex(element, childElement);
+    if (index === undefined) return false;
+    let slides = element.querySelectorAll(".owl-stage-outer .owl-stage > *");
+    return index + 1 === slides.length -1
+}

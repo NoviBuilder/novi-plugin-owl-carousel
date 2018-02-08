@@ -1,5 +1,7 @@
 const React = novi.react.React;
 import SettingsItem from "./SettingsItem";
+import MoveSlideLeftItem from "./MoveSlideLeftItem";
+import MoveSlideRightItem from "./MoveSlideRightItem";
 import AddSlideItem from "./AddSlideItem";
 import RemoveSlideItem from "./RemoveSlideItem";
 import Settings from "./Settings";
@@ -8,16 +10,16 @@ const Plugin = {
     name: "novi-plugin-owl-carousel",
     title: "Novi Owl Carousel Plugin",
     description: "Novi Plugin for owl carousel customization",
-    version: "1.0.1",
+    version: "1.0.2",
     dependencies: {
-        novi: "0.8.6"
+        novi: "0.9.0"
     },
     defaults: {
         querySelector: '.owl-carousel',
         childQuerySelector : '.owl-carousel .owl-item > *'
     },
     ui: {
-        editor: [SettingsItem, AddSlideItem, RemoveSlideItem],
+        editor: [MoveSlideLeftItem, SettingsItem, AddSlideItem, RemoveSlideItem, MoveSlideRightItem],
         settings: <Settings/>,
     },
     onLanguageChange : onLanguageChange

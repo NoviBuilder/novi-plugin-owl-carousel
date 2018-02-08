@@ -5,7 +5,7 @@ UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   entry: "./src/novi-owl-carousel.jsx",
   output: {
-    filename: "./dist/novi-plugin-owl-carousel.js",
+    filename: "dist/novi-plugin-owl-carousel.js",
     libraryTarget: 'commonjs2',
     library: 'novi-plugin-owl-carousel'
   },
@@ -30,7 +30,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
       }),
-      new UglifyJsPlugin({output: {comments: false}})
+      // new UglifyJsPlugin({output: {comments: false}})
   ],
 
   resolve: {
