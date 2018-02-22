@@ -96,19 +96,19 @@ module.exports =
 	};
 	function onLanguageChange(plugin) {
 	    var messages = Language.getDataByKey("novi-plugin-owl-carousel");
-	    plugin.ui.editor[0].title = messages.editor.settings.title;
-	    plugin.ui.editor[0].tooltip = messages.editor.settings.tooltip;
-	    plugin.ui.editor[0].header[1] = React.createElement(
+	    plugin.ui.editor[1].title = messages.editor.settings.title;
+	    plugin.ui.editor[1].tooltip = messages.editor.settings.tooltip;
+	    plugin.ui.editor[1].header[1] = React.createElement(
 	        "span",
 	        null,
 	        messages.editor.settings.header
 	    );
 
-	    plugin.ui.editor[1].title = messages.editor.addSlide.title;
-	    plugin.ui.editor[1].tooltip = messages.editor.addSlide.tooltip;
+	    plugin.ui.editor[2].title = messages.editor.addSlide.title;
+	    plugin.ui.editor[2].tooltip = messages.editor.addSlide.tooltip;
 
-	    plugin.ui.editor[2].title = messages.editor.removeSlide.title;
-	    plugin.ui.editor[2].tooltip = messages.editor.removeSlide.tooltip;
+	    plugin.ui.editor[3].title = messages.editor.removeSlide.title;
+	    plugin.ui.editor[3].tooltip = messages.editor.removeSlide.tooltip;
 
 	    return plugin;
 	}
